@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#getMessage").on("click", function () {
+                // 请把你的代码写在这条注释以下
+                $(".message").html("Here is the message");
+                // 请把你的代码写在这条注释以上
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <h2>Cat Photo Finder</h2>
+    </div>
+    <div class="row text-center">
+        <div class="col-xs-12 well message">
+            The message will go here
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-xs-12">
+            <button id="getMessage" class="btn btn-primary">
+                Get Message
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
