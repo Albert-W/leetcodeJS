@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8"/>
+    <title> 计算器事件</title>
+    <script type="text/javascript">
+        function count() {
+
+            //获取第一个输入框的值
+            var i = document.getElementById("txt1").value;
+            //获取第二个输入框的值
+            var j = document.getElementById("txt2").value;
+            //获取选择框的值
+            var k = document.getElementById("select").value;
+            //获取通过下拉框来选择的值来改变加减乘除的运算法则
+            var res = 0;
+            switch (k) {
+                case "+":
+                    res = parseInt(i) + parseInt(j);
+                    break;
+                case "-":
+                    res = i - j;
+                    break;
+                case "*":
+                    res = i * j;
+                    break;
+                case "/":
+                    if (j == 0) res = "被除数不能为零！"
+                    else res = i / j;
+
+            }
+            //设置结果输入框的值
+            document.getElementById("fruit").value = res;
+        }
+    </script>
+</head>
+<body>
+<input type='text' id='txt1'/>
+<select id='select'>
+    <option value='+'>+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type='text' id='txt2'/>
+<input type='button' value=' = ' onclick="count()"/> <!--通过 = 按钮来调用创建的函数，得到结果-->
+<input type='text' id='fruit'/>
+
+</body>
+</html>
