@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实践题 - 选项卡</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #tabs {
+            width: 350px;
+            height: 190px;
+            margin: 20px auto;
+        }
+
+        #head {
+            border-bottom: 2px solid #8B4513;
+            height: 32px;
+        }
+
+        #head li {
+            display: inline-block;
+            width: 60px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #999;
+            border-bottom: none;
+            margin-left: 5px;
+        }
+
+        #head li:hover {
+            cursor: pointer;
+        }
+
+        #head li.on {
+            border-top: 2px solid #8B4513;
+            border-bottom: 2px solid #FFFFFF;
+        }
+
+        #tab-list div {
+            border: 1px solid #7396B8;
+            border-top: none;
+        }
+
+        /*#tab-list div li{height: 30px;line-height: 30px;text-indent: 8px;}*/
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+
+        // JS实现选项卡切换
+        window.onload = function () {
+            var head = document.getElementById("head");
+            var headLi = head.getElementsByTagName("li");
+            var tabList = document.getElementById("tabs");
+            var div = tabList.getElementsByTagName("div");
+            for (var i = 0; i < headLi.length; i++) {
+                headLi[i].index = i;
+//                选中第i个标签
+                headLi[i].onmouseover = function () {
+                    //标签头
+                    for (var j = 0; j < headLi.length; j++) {
+                        headLi[j].className = "";
+                        div[j].className = "hide";
+                    }
+                    this.className = "on";
+                    div[this.index].className = "";
+                }
+            }
+        }
+
+
+    </script>
+
+</head>
+<body>
+<!-- HTML页面布局 -->
+<div id="tabs">
+    <ul id="head">
+        <li class="on">房产</li>
+        <li>家居</li>
+        <li>二手房</li>
+    </ul>
+    <div>
+        <ul>
+            <li><a href="javascript:;">275万购昌平邻铁三居 总价20万买一居</a></li>
+            <li><a href="javascript:;">200万内购五环三居 140万安家东三环</a></li>
+            <li><a href="javascript:;">北京首现零首付楼盘 53万购东5环50平</a></li>
+            <li><a href="javascript:;">京楼盘直降5000 中信府 公园楼王现房</a></li>
+        </ul>
+    </div>
+    <div class="hide">
+        <ul>
+            <li><a href="javascript:;">40平出租屋大改造 美少女的混搭小窝</a></li>
+            <li><a href="javascript:;">经典清新简欧爱家 90平老房焕发新生</a></li>
+            <li><a href="javascript:;">新中式的酷色温情 66平撞色活泼家居</a></li>
+            <li><a href="javascript:;">瓷砖就像选好老婆 卫生间烟道的设计</a></li>
+        </ul>
+    </div>
+    <div class="hide">
+        <ul>
+            <li><a href="javascript:;">通州豪华3居260万 二环稀缺2居250w甩</a></li>
+            <li><a href="javascript:;">西3环通透2居290万 130万2居限量抢购</a></li>
+            <li><a href="javascript:;">黄城根小学学区仅260万 121平70万抛!</a></li>
+            <li><a href="javascript:;">独家别墅280万 苏州桥2居优惠价248万</a></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

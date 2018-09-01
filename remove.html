@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无标题文档</title>
+</head>
+
+<body>
+<div id="content">
+    <h1>html</h1>
+    <h1>php</h1>
+    <h1>javascript</h1>
+    <h1>jquery</h1>
+    <h1>java</h1>
+</div>
+
+<script type="text/javascript">
+    function clearText() {
+        var content = document.getElementById("content");
+        // 在此完成该函数
+        var n = content.childNodes;
+        for (var i = n.length - 1; i > 0; i--) {
+            content.removeChild(n[i]);
+        }
+
+    }
+</script>
+
+<button onclick="clearText()">清除节点内容</button>
+
+
+</body>
+</html>
